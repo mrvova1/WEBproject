@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<h2 align="center">Manga</h2>
+{% for m in manga %}
+<div align="center">
+<h3>MangaTeg # {{ m.id }}</h3>
+<h1><a href='http://127.0.0.1:5000/manga/{{m.id}}/1'>{{ m.name }}</a></h1>
+<div>
+    <table>
+        <div><img src="{{ url_for('poluchenie_oblojki',num=m.id) }}" height="500" width="350"></div>
+    </table>
+</div>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

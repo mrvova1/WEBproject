@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Adding a manga</h1>
+<div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-control") }}<br>
+            {% for error in form.name.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.Release_year.label }}<br>
+            {{ form.Release_year(class="form-control") }}<br>
+            {% for error in form.Release_year.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.Title_status.label }}<br>
+            {{ form.Title_status(class="form-control") }}<br>
+            {% for error in form.Title_status.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.Author.label }}<br>
+            {{ form.Author(class="form-control") }}<br>
+            {% for error in form.Author.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.Artist.label }}<br>
+            {{ form.Artist(class="form-control") }}<br>
+            {% for error in form.Artist.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.Interpritator_team.label }}<br>
+            {{ form.Interpritator_team(class="form-control") }}<br>
+            {% for error in form.Interpritator_team.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.Number_of_chapters.label }}<br>
+            {{ form.Number_of_chapters(class="form-control") }}<br>
+            {% for error in form.Number_of_chapters.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p><input type="file" name="file"/>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        {{message}}
+    </form>
+</div>
+{% endblock %}

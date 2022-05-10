@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<h2 align="center">Interpritator teams</h2>
+{% for job in jobs %}
+<h3>Team # {{ job.id }}</h3>
+<a href='http://127.0.0.1:5000/addteam'>Добавление команды</a>
+<div class="table_container">
+    <table class="my_table">
+        <tr class="my_row">
+            <td class="title" width="250px" bgcolor="#dddddd">name</td>
+            <td class="title" width="300px" bgcolor="#dddddd">Line_up</td>
+            <td class="title" width="500px" bgcolor="#dddddd" align="center">Permissions</td>
+        </tr>
+        <tr class="my_row">
+            <td class="ordinary" bgcolor="#eeeeff" align="center">{{ job.name }}</td>
+            <td class="ordinary" bgcolor="#eeeeff" align="center">{{ job.Line_up }}</td>
+            <td class="ordinary" bgcolor="#eeeeff" align="center">{{ job.Permissions }}</td>
+        </tr>
+
+    </table>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

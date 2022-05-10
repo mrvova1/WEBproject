@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<h2 align="center">{{name}}</h2>
+<h2 align="center">Глава{{glava}}</h2>
+{% for m in range(ctr) %}
+<div align="center">
+<h3>Страница {{ m }}</h3>
+<div>
+    <table>
+        <div><img src="{{ url_for('zagruzka_glavi',id=id, glava=glava, ctr=m) }}" height="900" width="700"></div>
+    </table>
+</div>
+</div>
+<br>
+{% endfor %}
+{% if 1 < glava < kolvo_glav %}
+<h1>
+<div align="center">
+    <a href="/manga/{{id}}/{{glava - 1}}">Назад</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/manga/{{id}}/{{glava + 1}}">Далее</a>
+</div>
+</h1>
+{% elif glava < kolvo_glav %}
+<h1>
+<div align="center">
+    <a href="/manga/{{id}}/{{glava + 1}}">Далее</a>
+</div>
+</h1>
+{% elif 1 < glava %}
+<h1>
+<div align="center">
+    <a href="/manga/{{id}}/{{glava - 1}}">Назад</a>
+</div>
+</h1>
+{% endif %}
+
+{% endblock %}
