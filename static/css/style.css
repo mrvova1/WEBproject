@@ -17,3 +17,8 @@ h4 {
 p {
     font-size: 14pt;
 }
+body {
+    background-image: url(https://oir.mobi/uploads/posts/2021-03/thumbs/1616530491_36-p-prikolnii-fon-41.jpg );
+    background-size: 1800px 1000px;
+    background-attachment: fixed;
+}
